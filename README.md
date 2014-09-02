@@ -38,21 +38,27 @@ if (pippo) {
 }
 ```
 ### Misc
-Never end lists with commas.
-Always use double quotes: ""
-Always put ; after each row
+Never end lists with commas.  
+Always use double quotes: ""  
+Always put ; after each row  
 Use English for names and meaningful comments. (Joke comments are allowed)
 
 ##Dichiarazioni:
 
-- VAR sempre e sempre in testa allo scope (penalità 5 euri)
-  un var, e virgole per le dichiarazioni
-  var items = getItems(),
-      goSportsTeam = true,
-      dragonball = 'z';
-  RICORDATEVI I CICLI NON SONO SCOPED
-  nomi espressivi SEMPRE, tanto poi minifichiamo tutto.
-- funzioni:
+###Variables
+**Always use var.**
+Globals pollute the global namespace and kill your cats while you sleep.  
+Always declare them at the top of the scope.  
+*Remember that cycles and conditionals are **not** scoped*.  
+Group variable declarations together with commas.  
+```javascript
+var items = getItems(),
+    goSportsTeam = true,
+    dragonball = 'z';
+```
+Always use meaningful names, you are not a manual minifier.
+
+###Functions
  a meno che non sia necessario usare le espressioni, usare le dichiarazioni
  // dichiarazione
  function pippo(a, b) {

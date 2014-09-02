@@ -84,13 +84,17 @@ var factorial = function(number) {
 }; 
 ```
 
-* SUGGERIMENTI
--usare === e !== ogni volta in cui è possibile 
--gli early return spaccano
+##Suggestions
+###Comparisons
+== and != are a mess. Use === and !== everytime it's possible.
+
+###Early returns
+Early returns rule. They're efficient and easily understandable.
+
+```javascript
 // Bad:
 function returnLate(foo) {
   var ret;
-
   if (foo) {
     ret = "foo";
   } else {
@@ -108,7 +112,7 @@ function returnEarly(foo) {
   }
   return "quux";
 }
-
+```
  
 ##Good Tricks
 ###Parameter defaults
@@ -133,6 +137,4 @@ var i,a=[],els=q("#foo");
 for(i=0;i<els.length;i++){a.push(els[i]);}
 ```
 
-#JQUERY
-
-
+#jQuery

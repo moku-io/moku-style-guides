@@ -121,6 +121,10 @@ function returnEarly(foo) {
   return "quux";
 }
 ```
+###Sections
+Separate your code in sections. 
+Add 
+
  
 ##Good Tricks
 ###Parameter defaults
@@ -176,6 +180,7 @@ $('.class', '#class-container');
 ##Events
 Use only one Document Ready handler per page. It makes it easier to debug and keep track of the behavior flow. Always put it on top of the js file.  
 DO NOT use anonymous functions to attach events. Anonymous functions are difficult to debug, maintain, test, or reuse.
+ALWAYS put them outside the document ready handler. I'm serious.
 ```javascript
 $("#myLink").on("click", function(){...}); // BAD
 
@@ -188,4 +193,20 @@ Use onclick and i'll punch you when you least expect it.
 ```javascript
 <a id="myLink" href="#" onclick="myEventHandler();">my link</a> <!-- BAD -->
 $("#myLink").on("click", myEventHandler); // GOOD
+```
+##Chaining
+Use Chaining whenever possible. If the chain grows over 3 links or gets complicated because of event assignment, use appropriate line breaks and indentation to make the code readable.
+```javascript
+$("#myLink")
+    .addClass("bold")
+    .on("click", myClickHandler)
+    .on("mouseover", myMouseOverHandler)
+    .show();
+```
+##Misc
+Do not mix CSS and jQuery, always use classes, defined in your CSS and apply them using jQuery.
+```javascript
+$("#mydiv").css({'color':red, 'font-weight':'bold'}); // BAD
+.error { color: red; font-weight: bold; } /* GOOD */
+$("#mydiv").addClass("error"); // GOOD
 ```

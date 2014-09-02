@@ -199,6 +199,20 @@ Use onclick and i'll punch you when you least expect it.
 <a id="myLink" href="#" onclick="myEventHandler();">my link</a> <!-- BAD -->
 $("#myLink").on("click", myEventHandler); // GOOD
 ```
+Try to DRY up your event attachments. You can attach multiple events to the same element by using:
+```javascript
+  var listItems = $("#longlist li");
+  listItems.on({
+    "mouseenter": function() {
+      $(this).text("Click me!");
+    },
+
+    "click": function() {
+      $(this).text("Why did you click me?!");
+    }
+
+  });
+```
 ##Chaining
 Use Chaining whenever possible. If the chain grows over 3 links or gets complicated because of event assignment, use appropriate line breaks and indentation to make the code readable.
 ```javascript

@@ -75,7 +75,7 @@ var factorial = function factorial(number) {
 	return number * factorial(number - 1);
 };
 
-// BAD (non funziona neanche)
+// BAD (doesn't even work)
 var factorial = function(number) {
 	if ( number < 2 ) {
     	return 1;
@@ -83,21 +83,6 @@ var factorial = function(number) {
 	return number * factorial(number - 1);
 }; 
 ```
- 
-- CODICE DEL GENERE E VI TAGLIO LE GOMME DELLA MACCHINA
-function q(s) {
-  return document.querySelectorAll(s);
-}
-var i,a=[],els=q("#foo");
-for(i=0;i<els.length;i++){a.push(els[i]);}
-
- 
-* TRICKS
-parameter defaults:
-	
-	function myFunction(x, y) {
-   	 y = y || 0;
-	}
 
 * SUGGERIMENTI
 -usare === e !== ogni volta in cui è possibile 
@@ -124,6 +109,30 @@ function returnEarly(foo) {
   return "quux";
 }
 
-*JQUERY
+ 
+##Good Tricks
+###Parameter defaults
+Always try and include parameter defaults.
+This trick works nicely:
+```javascript
+	function myFunction(x, y) {
+   	 y = y || 0;
+	}
+```
+	
+
+
+## Summing it up
+Don't do anything stupid.
+Write code like this and i'll cut your tyres:
+```javascript
+function q(s) {
+  return document.querySelectorAll(s);
+}
+var i,a=[],els=q("#foo");
+for(i=0;i<els.length;i++){a.push(els[i]);}
+```
+
+#JQUERY
 
 

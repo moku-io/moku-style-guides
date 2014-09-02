@@ -1,4 +1,4 @@
-# JS
+# JavaScript
 ## Style
 ### Names
 ```javascript
@@ -11,12 +11,14 @@ SYMBOLIC_CONSTANTS_LIKE_THIS;
 $jQueryObject;
 ```
 
-###Spazi
-Spaziate tutto
-	x = 5 + 6;        // Good
-x=5+6             // Bad
+###Spaces
 
-eccezione: parentesi
+```javascript
+x = 5 + 6;        // Good
+x=5+6             // Bad
+```
+Exception: Parentheses
+```javascript
 [40, 100, 1, 5]   // Good
 [40,100,1,5]      // Bad
 [ 40, 100, 1, 5 ]   // Bad
@@ -24,26 +26,22 @@ function myStuff(socks, pajamas) { // good
 
 }
 myStuff("striped", "lovely pajamas with bears"); // good
+```
 
+### Conditionals & Loops
+Always use {} and a new line
+```javascript
+if (pippo) pluto(); // makes baby jesus cry
 
-###Altro
-- MAI finire le liste con virgola
-
-- sempre double quotes ""
-
-- sempre ; alla fine
-
-
-- conditionals e loops:
- SEMPRE graffe e a capo.
- if (pippo) pluto(); // fa piangere gesù bambino
-
- if (pippo) {
- 	pluto(); 	// molto meglio
- }
-
-- TUTTO IN INGLESE, SEMPRE E DOVUNQUE
-
+if (pippo) {
+	pluto(); 		// much better
+}
+```
+### Misc
+Never end lists with commas.
+Always use double quotes: ""
+Always put ; after each row
+Use English for names and meaningful comments. (Joke comments are allowed)
 
 ##Dichiarazioni:
 

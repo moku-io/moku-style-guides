@@ -43,7 +43,7 @@ Always use double quotes: ""
 Always put ; after each row  
 Use English for names and meaningful comments. (Joke comments are allowed)
 
-##Dichiarazioni:
+##Declarations
 
 ###Variables
 **Always use var.**
@@ -59,27 +59,30 @@ var items = getItems(),
 Always use meaningful names, you are not a manual minifier.
 
 ###Functions
- a meno che non sia necessario usare le espressioni, usare le dichiarazioni
- // dichiarazione
- function pippo(a, b) {
- 	console.log("ciao pippo");
- }
- 
- // espressione
- // GOOD, in caso usate questa, anche se viene valutata a runtime è tracciabile negli stacktrace e può chiamarsi ricorsivamente
- var factorial = function factorial(number) {
-   if ( number < 2 ) {
-     return 1;
-   }
-   return number * factorial(number - 1);
- };
- // BAD (non funziona neanche)
- var factorial = function(number) {
-   if ( number < 2 ) {
-     return 1;
-   }
-   return number * factorial(number - 1);
- }; 
+If possible use standard declarations:
+```javascript
+function pippo(a, b) { //standard declaration
+	console.log("ciao pippo");
+}
+```
+If expressions are necessary, prefer the named version. Named function expressions are evaluated at runtime, but are traced in stacktraces and can call themselves recursively if needed.
+```javascript
+// GOOD
+var factorial = function factorial(number) {
+	if ( number < 2 ) {
+		return 1;
+	}
+	return number * factorial(number - 1);
+};
+
+// BAD (non funziona neanche)
+var factorial = function(number) {
+	if ( number < 2 ) {
+    	return 1;
+	}
+	return number * factorial(number - 1);
+}; 
+```
  
 - CODICE DEL GENERE E VI TAGLIO LE GOMME DELLA MACCHINA
 function q(s) {

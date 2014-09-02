@@ -1,6 +1,6 @@
-#JS:
-##Stile:
-###Nomi
+# JS
+## Style
+### Names
 ```javascript
 functionNamesLikeThis;
 variableNamesLikeThis;
@@ -118,3 +118,5 @@ function returnEarly(foo) {
 }
 
 *JQUERY
+
+

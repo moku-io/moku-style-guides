@@ -49,14 +49,23 @@ Use English for names and meaningful comments. (Joke comments are allowed)
 **Always use var.**
 Globals pollute the global namespace and kill your cats while you sleep.  
 Always declare them at the top of the scope.  
-*Remember that cycles and conditionals are **not** scoped*.  
+Remember that cycles and conditionals are **not** scoped.  
 Group variable declarations together with commas.  
 ```javascript
 var items = getItems(),
     goSportsTeam = true,
     dragonball = 'z';
 ```
-Always use meaningful names, you are not a manual minifier.
+Always use literal syntax.
+```javascript
+// GOOD
+var array = [],
+    object = {};
+// BAD
+var array = new Array(),
+    object = new Object();
+```
+Always use meaningful names, you are not a human minifier.
 
 ###Functions
 If possible use standard declarations:
@@ -65,7 +74,7 @@ function pippo(a, b) { //standard declaration
 	console.log("ciao pippo");
 }
 ```
-If expressions are necessary, prefer the named version. Named function expressions are evaluated at runtime, but are traced in stacktraces and can call themselves recursively if needed.
+If expressions are necessary, prefer the named version. Named function expressions are evaluated at runtime, but are tracked in stacktraces and can call themselves recursively if needed.
 ```javascript
 // GOOD
 var factorial = function factorial(number) {
@@ -86,7 +95,7 @@ var factorial = function(number) {
 
 ##Suggestions
 ###Comparisons
-== and != are a mess. Use === and !== everytime it's possible.
+== and != are a mess. Use === and !== every time it's possible.
 
 ###Early returns
 Early returns rule. They're efficient and easily understandable.
@@ -106,7 +115,6 @@ function returnLate(foo) {
 // Good:
 
 function returnEarly(foo) {
-
   if (foo) {
     return "foo";
   }
@@ -123,8 +131,6 @@ This trick works nicely:
    	 y = y || 0;
 	}
 ```
-	
-
 
 ## Summing it up
 Don't do anything stupid.
@@ -138,3 +144,48 @@ for(i=0;i<els.length;i++){a.push(els[i]);}
 ```
 
 #jQuery
+##Variables
+Use $camelCase names.  
+Cache them!
+```javascript
+var $myDiv = $("#myDiv");
+```
+##Selectors
+As a general rule, use as few selectors as possible.  
+Use ID when possible. Use a single ID selector, multiple are useless.  
+When using class selectors, don't use the element type in your selector.  
+```javascript
+var $products = $("div.products"); // SLOW
+var $products = $(".products"); // FAST
+```
+Avoid Excessive Specificity.  
+```javascript
+$(".data table.attendees td.gonzalez");
+ 
+// Better: Drop the middle if possible.
+$(".data td.gonzalez");
+```
+Give your Selectors a Context.
+```javascript
+// SLOWER because it has to traverse the whole DOM for .class
+$('.class');
+
+// FASTER because now it only looks under class-container.
+$('.class', '#class-container');
+```
+##Events
+Use only one Document Ready handler per page. It makes it easier to debug and keep track of the behavior flow. Always put it on top of the js file.  
+DO NOT use anonymous functions to attach events. Anonymous functions are difficult to debug, maintain, test, or reuse.
+```javascript
+$("#myLink").on("click", function(){...}); // BAD
+
+// GOOD
+function myLinkClickHandler(){...}
+$("#myLink").on("click", myLinkClickHandler);
+```
+DO NOT use behavioral markup in HTML (JavaScript inlining). Always bind events with jQuery to be consistent so it's easier to attach and remove events dynamically.  
+Use onclick and i'll punch you when you least expect it.  
+```javascript
+<a id="myLink" href="#" onclick="myEventHandler();">my link</a> <!-- BAD -->
+$("#myLink").on("click", myEventHandler); // GOOD
+```

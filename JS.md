@@ -122,10 +122,15 @@ function returnEarly(foo) {
 }
 ```
 ###Sections
-Separate your code in sections. 
-Add 
+Separate your code in sections.  
+Add a comment to prefix each section.
+```javascript
+/***********
+** SECTION: TOP BAR
+***********/
+```
+Stick to it. Please.
 
- 
 ##Good Tricks
 ###Parameter defaults
 Always try and include parameter defaults.
@@ -179,8 +184,8 @@ $('.class', '#class-container');
 ```
 ##Events
 Use only one Document Ready handler per page. It makes it easier to debug and keep track of the behavior flow. Always put it on top of the js file.  
-DO NOT use anonymous functions to attach events. Anonymous functions are difficult to debug, maintain, test, or reuse.
-ALWAYS put them outside the document ready handler. I'm serious.
+DO NOT use anonymous functions to attach events. Anonymous functions are difficult to debug, maintain, test, or reuse.  
+ALWAYS put them outside the document ready handler. I'm serious. Putting them inside it makes no fricking sense.
 ```javascript
 $("#myLink").on("click", function(){...}); // BAD
 
@@ -207,6 +212,10 @@ $("#myLink")
 Do not mix CSS and jQuery, always use classes, defined in your CSS and apply them using jQuery.
 ```javascript
 $("#mydiv").css({'color':red, 'font-weight':'bold'}); // BAD
-.error { color: red; font-weight: bold; } /* GOOD */
+.error { 
+	color: red; 
+	font-weight: bold; 
+} /* GOOD */
 $("#mydiv").addClass("error"); // GOOD
 ```
+Same goes for animation and transitions. Always prefer CSS if possible, resort to a polyfill if necessary.

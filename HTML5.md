@@ -220,3 +220,31 @@ L'aggiunta della classe del widget dovrà essere fatta seguendo le seguenti rego
 - la classe del modulo, in accordo con la convenzione BEM Block, Element, Modifier, dovrà riportare il nome del modulo/blocco. Questa sarà la classe con il quale questo modulo sarà identificato sia nell'html che all'interno del css.
 - le classi degli elementi interni al modulo dovranno rispettare la seguente convenzione ".block\_ \_element". Es. la classe del div contentente il titolo del modulo .slider-news sarà ".slider-news_ _title".
 - per rappresentare un diverso stato del modulo o di un elemento del modulo si dovrà utilizzare la seguente convenzione ".block--modifier", nel caso del modulo, e ".block\_\_element--modifier" nel caso dell'elemento. Es. se voglio dare un background diverso al modulo nel caso in cui questo sia attivo, la classe che conterrà il background modificato sarà ".slider-news--active".
+- Quando si ha la necessità di dare al modulo una classe o un id che descriva il suo contenuto semantico si utilizzi la regola ".block--modifier". Es. il modulo slider-news è utilizzato sia per le daily-news che per le weekly-news, le classi o gli id saranno "slider-news--daily" e "slider-news--weekly". Questa classe dovrà essere inserita nell'html subito dopo la module-class:
+```
+<div class="slider-news slider-news--weekly small-12 columns">
+</div>
+```
+Un esempio di modulo è il seguente:
+
+```
+<div class="site-search row">
+  <div class="small-12 columns">
+    <form class="site-search__form">
+      <div class="row">
+          <div class="large-12 columns">
+            <div class="row collapse">
+              <div class="small-10 columns">
+                <input type="text">
+              </div>
+              <div class="small-2 columns">
+                <a href="#" class="site-search__button button postfix">Search</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </form>
+  </div>
+</div>
+```
+E' necessario mettere sempre la classe del modulo, ma non è necessario applicare classi custom agli elementi se non serve. Queste ultime servono solamente se vi è la necessità di applicare uno stile diverso da quello di default scelto.

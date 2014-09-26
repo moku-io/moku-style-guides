@@ -159,7 +159,7 @@ Gli elementi di una pagina si possono suddividere in due categorie principali: e
 - Gli elementi che formano i moduli costituiscono tutti gli elementi (widget) che possono venire utilizzati più volte all'interno delle pagine del sito. Dato il carattere non esclusivo dei moduli, questi verranno caratterizzati principalmente da una classe e solo se necessario da un id.
 
 ###Layout
-Il contenuto principale dovrà essere strutturato in sezioni verticali alle quali si dovranno assegnare degli id. Esempio: il contenuto principale può essere suddiviso in tre colonne: "left-column", "center-column" e "right-column".
+Il contenuto principale dovrà essere strutturato in sezioni verticali alle quali si dovranno assegnare degli id. Esempio: il contenuto principale può essere suddiviso in tre colonne: "left-column", "center-column" e "right-column". E' opportuno che gli id scelti per le sezioni verticali abbiano come prefisso un riferimento alla pagina nella quale si trovano. Es. "home-page\_\_left-column", "about-page__center-column".
 
 All'interno delle varie sezioni, si dovrà poi raggruppare i contenuti correlati tra loro utilizzando i tag section. 
 In questo caso al tag section si dovrà assegnare un id che riporti il contenuto semantico. Es. section contenente tutte le notizie del giorno: id "section-daily-news", section contenente il carrello di un sito: id "section-shopping-cart".
@@ -170,10 +170,10 @@ I div wrapper che strutturano in sezioni verticali saranno di solito i div colum
 
 ```
 <div class="row">
-  <div class="small-8 columns" id="primary-content">
+  <div class="small-8 columns" id="home-page__primary-content">
     <!-- primary content -->
   </div>
-  <div class="small-4 columns" id="secondary-content">
+  <div class="small-4 columns" id="home-page__secondary-content">
     <!-- secondary content -->  
   </div>
 </div>
@@ -182,7 +182,7 @@ I tag section saranno di solito i div con classe row di foundation.
 
 ```
 <div class="row">
-  <div class="small-8 columns" id="primary-content">
+  <div class="small-8 columns" id="home-page__primary-content">
     <!-- primary content -->
     <section class="row" id="section-daily-news">
       <div class="small-12 columns">
@@ -196,7 +196,7 @@ I tag section saranno di solito i div con classe row di foundation.
       </div>
     </section>
   </div>
-  <div class="small-4 columns" id="secondary-content">
+  <div class="small-4 columns" id="home-page__secondary-content">
     <!-- secondary content -->  
   </div>
 </div>

@@ -250,3 +250,5 @@ Un esempio di modulo è il seguente:
 </div>
 ```
 E' necessario mettere sempre la classe del modulo, ma non è necessario applicare classi custom agli elementi se non serve. Queste ultime servono solamente se vi è la necessità di applicare uno stile diverso da quello di default scelto.
+
+- Nel caso di utilizzo di tag article ad es. per un post di un blog, per l'intestazione si può usare il tag header, mentre per riportare informazioni riguardanti la data di pubblicazione o l'autore si può utilizzare il tag footer.

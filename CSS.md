@@ -33,4 +33,16 @@ Queste regole si comporranno di più file:
 #footer {
 }
 ```
--**custom-page.scss** ospiterà le regole di ogni pagina riguardanti layout e le id-rules dei moduli. 
+-**custom-page.scss** ospiterà le regole di ogni pagina riguardanti layout e le id-rules dei moduli. Le regole di layout saranno del tipo id-rules dato che ad ogni elemento del layout (div, section) è stato dato un id. Per i moduli, invece, le regole saranno sia id-rules che class-rules.
+```
+#home-page__primary-content {
+  
+}
+
+#slider-news--weekly {
+  //modulo slider-news per le notizie weekly
+  .slider-news__title {
+    color: pink;
+  }
+}
+```

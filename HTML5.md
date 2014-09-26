@@ -206,24 +206,25 @@ Se vi sono contenuti che non appartengono al flusso di contenuto principale piut
 ###Moduli
 I moduli saranno identificati da una classe che esprime la loro forma e non il loro contenuto. Ad esempio un widget con uno slider di notizie riporterà la classe "slider-news" ma non la classe "daily-news".
 Nel caso servisse identificare il widget in base al suo contenuto semantico per differenziare alcuni elementi, es. un insieme di widget che rappresentano rubriche diverse e ogni rubrica ha un colore del titolo diverso, si dovrà assegnare al modulo un id oppure una classe ulteriore in modo che identifichi il suo contenuto semantico.
+Il concetto di modulo ben si presta al tag article, pertanto il tag div che ha per classe "module-class" potrà essere sostituito dal tag article. Attenzione però che non sempre tutti i moduli sono anche article. http://html5doctor.com/the-article-element/
 
 L'aggiunta della classe del widget dovrà essere fatta seguendo le seguenti regole:
- - la classe del modulo, module-class, dovrà essere aggiunta all'inizio del div row o column di Foundation, a seconda se il modulo inizi con un div con classe row oppure inizi con un div con classe columns.
+ - la classe del modulo, module-class, dovrà essere aggiunta all'inizio del div row o column di Foundation, a seconda se il modulo inizi con un div con classe row oppure inizi con un div con classe columns. Questo div potrà essere sostituito dal tag article.
 ```
-<div class="module-class row">
-</div>
+<article class="module-class row">
+</article>
 ```
 ```
-<div class="module-class small-12 columns">
-</div>
+<article class="module-class small-12 columns">
+</article>
 ```
 - la classe del modulo, in accordo con la convenzione BEM Block, Element, Modifier, dovrà riportare il nome del modulo/blocco. Questa sarà la classe con il quale questo modulo sarà identificato sia nell'html che all'interno del css.
 - le classi degli elementi interni al modulo dovranno rispettare la seguente convenzione ".block\_ \_element". Es. la classe del div contentente il titolo del modulo .slider-news sarà ".slider-news_ _title".
 - per rappresentare un diverso stato del modulo o di un elemento del modulo si dovrà utilizzare la seguente convenzione ".block--modifier", nel caso del modulo, e ".block\_\_element--modifier" nel caso dell'elemento. Es. se voglio dare un background diverso al modulo nel caso in cui questo sia attivo, la classe che conterrà il background modificato sarà ".slider-news--active".
 - Quando si ha la necessità di dare al modulo una classe o un id che descriva il suo contenuto semantico si utilizzi la regola ".block--modifier". Es. il modulo slider-news è utilizzato sia per le daily-news che per le weekly-news, le classi o gli id saranno "slider-news--daily" e "slider-news--weekly". Questa classe dovrà essere inserita nell'html subito dopo la module-class:
 ```
-<div class="slider-news slider-news--weekly small-12 columns">
-</div>
+<article class="slider-news slider-news--weekly small-12 columns">
+</article>
 ```
 Un esempio di modulo è il seguente:
 

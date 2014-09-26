@@ -141,7 +141,7 @@ I tag header e footer usati per indicare rispettivamente l'header e il footer de
 </footer>
 ```
 Si è scelto di dare un id all'header e al footer del documento perché in questo modo lo stile di questi due elementi non risulta essere applicato ad altri elementi con lo stesso tag. Nel CSS usare regole di tipo id-rules e non tag-rules.
-Tutti gli elementi interni all'header e al footer dovranno avere classi di tipo: "header--element" o "footer-element".
+Tutti gli elementi interni all'header e al footer dovranno avere classi di tipo: "header\_\_element" o "footer__element".
 
 ###Nav
 Il tag nav usato per identificare il menù primario del sito dovrà essere indicato così:
@@ -149,7 +149,7 @@ Il tag nav usato per identificare il menù primario del sito dovrà essere indic
 <nav id="menu">
 </nav>
 ```
-Tutti gli elementi interni al menu dovranno avere classi di tipo: "menu--element".
+Tutti gli elementi interni al menu dovranno avere classi di tipo: "menu__element".
 
 ###Layout and Module
 Gli elementi di una pagina si possono suddividere in due categorie principali: elementi di layout e elementi che formano i moduli.

@@ -206,7 +206,8 @@ Se vi sono contenuti che non appartengono al flusso di contenuto principale piut
 ###Moduli
 I moduli saranno identificati da una classe che esprime la loro forma e non il loro contenuto. Ad esempio un widget con uno slider di notizie riporterà la classe "slider-news" ma non la classe "daily-news".
 Nel caso servisse identificare il widget in base al suo contenuto semantico per differenziare alcuni elementi, es. un insieme di widget che rappresentano rubriche diverse e ogni rubrica ha un colore del titolo diverso, si dovrà assegnare al modulo un id oppure una classe ulteriore in modo che identifichi il suo contenuto semantico.
-Il concetto di modulo ben si presta al tag article, pertanto il tag div che ha per classe "module-class" potrà essere sostituito dal tag article. Attenzione però che non sempre tutti i moduli sono anche article. http://html5doctor.com/the-article-element/
+
+- Il modulo così presentato può essere visto anche come un elemento article, pertanto il tag div che ha per classe "module-class" potrà essere sostituito dal tag article. Attenzione però che non sempre tutti i moduli sono anche elementi article. Per distinguere i casi in cui il modulo è rappresentato da un elemento div o da un elemento article si faccia riferimento a questo articolo http://html5doctor.com/the-article-element/
 
 L'aggiunta della classe del widget dovrà essere fatta seguendo le seguenti regole:
  - la classe del modulo, module-class, dovrà essere aggiunta all'inizio del div row o column di Foundation, a seconda se il modulo inizi con un div con classe row oppure inizi con un div con classe columns. Questo div potrà essere sostituito dal tag article.

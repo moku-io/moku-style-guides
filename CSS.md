@@ -150,3 +150,6 @@ To prevent you from falling into this nightmare, the inception rule is **don’t
 - http://css-tricks.com/efficiently-rendering-css/
 - https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS
 
+## SASS
+- http://sass-lang.com/guide
+- http://thesassway.com/

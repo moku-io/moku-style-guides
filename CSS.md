@@ -145,3 +145,8 @@ And so, like a child with a new toy, we begin to use this feature in -what we th
 Because Sass offers you the ability to nest your selectors, and you know that having your code encapsulated is the "good way to avoid collisions with other styles", you might find yourself mimicking the DOM in your Sass (bad idea).
 
 To prevent you from falling into this nightmare, the inception rule is **don’t go more than four levels deep.**
+
+## Efficient CSS
+- http://css-tricks.com/efficiently-rendering-css/
+- https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS
+
